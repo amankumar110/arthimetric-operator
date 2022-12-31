@@ -1,34 +1,17 @@
-const numInputOne = document.getElementById("num1-input");
-const operatorInput = document.getElementById("operator-input");
-const numInputTwo = document.getElementById("num2-input");
-const submitBtn = document.getElementById("btn");
-const result = document.getElementById("result");
+let icon = document.getElementById("burgicon");
+let navlinks = document.querySelector("#navlinks");
+icon.addEventListener("click", () => {
+    let NavDiv = document.getElementById("NavDiv");
+    if (NavDiv.style.display != "none") {
+      NavDiv.style.display = "none";
+      navlinks.style.opacity = 1;
 
-const add = (a, b) => a + b;
+    }
+    else {
+      NavDiv.style.display = "flex";
 
-const sub = (a, b) => a - b;
+      navlinks.style.opacity = 0;
+    }
+ 
 
-const multiply = (a, b) => a * b;
-
-const divide = (a, b) => a / b;
-
-submitBtn.addEventListener("click", function (e) {
-  e.preventDefault();
-  let num1 = numInputOne.value;
-  let operator = operatorInput.value;
-  let num2 = numInputTwo.value;
-  let ans = 0;
-  if (operator == "+") {
-    ans = add(num1, num2);
-  } else if (operator == "-") {
-    ans = sub(num1, num2);
-  } else if (operator == "*") {
-    ans = multiply(num1, num2);
-  } else if (operator == "/") {
-    ans = divide(num1, num2);
-  }
-  else {
-    ans = "Enter valid operator only"
-  }
-  result.textContent = ans;
-});
+  });
